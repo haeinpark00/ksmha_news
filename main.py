@@ -17,7 +17,8 @@ def get_articles():
 
     res = requests.get(url, headers=headers)
     print("🧾 Raw HTML Response:")
-    print(response.text)
+    print(res.text)  # ← 여기를 res로 수정!
+
     soup = BeautifulSoup(res.text, 'html.parser')
     rows = soup.find_all('tr')
 
