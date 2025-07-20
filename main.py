@@ -16,6 +16,8 @@ def get_articles():
     }
 
     res = requests.get(url, headers=headers)
+    print("🧾 Raw HTML Response:")
+    print(response.text)
     soup = BeautifulSoup(res.text, 'html.parser')
     rows = soup.find_all('tr')
 
